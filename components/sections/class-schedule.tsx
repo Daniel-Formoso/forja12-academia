@@ -7,8 +7,11 @@ import { siteConfig } from "@/data/site";
 
 const activityStyles: Record<string, { dot: string; border: string }> = {
   Bike: { dot: "bg-indigo-500", border: "border-indigo-500" },
-  Ritmos: { dot: "bg-primary", border: "border-primary" },
-  Localizada: { dot: "bg-paper-foreground", border: "border-paper-foreground" },
+  Dança: { dot: "bg-primary", border: "border-primary" },
+  Funcional: { dot: "bg-paper-foreground", border: "border-paper-foreground" },
+  Mobilidade: { dot: "bg-primary", border: "border-primary" },
+  Boxe: { dot: "bg-paper-foreground", border: "border-paper-foreground" },
+  Circuito: { dot: "bg-primary", border: "border-primary" },
 };
 
 export function ClassSchedule() {
@@ -55,7 +58,7 @@ export function ClassSchedule() {
           </div>
         ))}
       </div>
-      <p className="mt-4 text-center text-sm text-paper-muted">Aulas de segunda a sexta. Confirme eventuais alterações de horário com a recepção.</p>
+      <p className="mt-4 text-center text-sm text-paper-muted">Grade fictícia usada apenas para demonstrar a interação.</p>
     </div>
   );
 }

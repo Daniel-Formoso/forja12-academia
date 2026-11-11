@@ -9,25 +9,9 @@ import { Navbar } from "@/components/sections/navbar";
 import { Plans } from "@/components/sections/plans";
 import { SocialProof } from "@/components/sections/social-proof";
 import { MotionController } from "@/components/motion/motion-controller";
-import { WhatsAppFloating } from "@/components/whatsapp-floating";
-import { siteConfig } from "@/data/site";
+import { PrototypeNotice } from "@/components/prototype-notice";
 
 export default function Page() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "HealthClub",
-    name: siteConfig.name,
-    telephone: `+${siteConfig.phone}`,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: siteConfig.address.street,
-      addressLocality: siteConfig.address.city,
-      addressRegion: siteConfig.address.state,
-      addressCountry: "BR",
-    },
-    sameAs: [siteConfig.instagram],
-  };
-
   return (
     <>
       <MotionController />
@@ -44,8 +28,7 @@ export default function Page() {
         <FinalCta />
       </main>
       <Footer />
-      <WhatsAppFloating />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      <PrototypeNotice />
     </>
   );
 }

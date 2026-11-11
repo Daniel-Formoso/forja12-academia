@@ -1,24 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu } from "lucide-react";
 import { SiteLogo } from "@/components/site-logo";
 import { buttonVariants } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { siteConfig, whatsappUrl } from "@/data/site";
+import { contactUrl, siteConfig } from "@/data/site";
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const updateSurface = () => setScrolled(window.scrollY > 48);
-    updateSurface();
-    window.addEventListener("scroll", updateSurface, { passive: true });
-    return () => window.removeEventListener("scroll", updateSurface);
-  }, []);
-
   return (
-    <header data-scrolled={scrolled} className="site-header fixed inset-x-0 top-0 z-50 h-20 border-b border-transparent bg-transparent transition-[background-color,border-color,box-shadow] duration-200">
+    <header data-scrolled="true" className="site-header fixed inset-x-0 top-0 z-50 h-20 border-b transition-[background-color,border-color,box-shadow] duration-200">
       <div className="mx-auto flex h-full max-w-6xl items-center justify-between gap-8 px-4 sm:px-6">
         <SiteLogo />
         <nav aria-label="Navegação principal" className="ml-auto hidden items-center gap-8 lg:flex">
@@ -29,8 +19,8 @@ export function Navbar() {
           ))}
         </nav>
         <div className="hidden lg:block">
-          <a href={whatsappUrl} target="_blank" rel="noreferrer" className={buttonVariants({ className: "h-12 rounded-none px-5 font-bold" })}>
-            Aula experimental <ArrowUpRight />
+          <a href={contactUrl} className={buttonVariants({ className: "h-12 rounded-none px-5 font-bold" })}>
+            Ver conceito <ArrowUpRight />
           </a>
         </div>
 
@@ -43,14 +33,14 @@ export function Navbar() {
           <SheetContent className="w-full max-w-none rounded-none border-l bg-muted p-0 sm:max-w-md">
             <SheetHeader className="border-b p-6 text-left">
               <SheetTitle><SiteLogo /></SheetTitle>
-              <SheetDescription>Navegue pela página da Ed Fitness.</SheetDescription>
+              <SheetDescription>Navegue pelo projeto fictício da Forja 12.</SheetDescription>
             </SheetHeader>
             <nav aria-label="Navegação móvel" className="flex flex-col px-6 py-4">
               {siteConfig.navigation.map((item) => (
                 <SheetClose key={item.href} asChild><a href={item.href} className="border-b py-5 font-display text-2xl font-bold uppercase">{item.label}</a></SheetClose>
               ))}
-              <a href={whatsappUrl} target="_blank" rel="noreferrer" className={buttonVariants({ className: "mt-7 h-12 rounded-none font-bold" })}>
-                Falar com a recepção <ArrowUpRight />
+              <a href={contactUrl} className={buttonVariants({ className: "mt-7 h-12 rounded-none font-bold" })}>
+                Ver conceito <ArrowUpRight />
               </a>
             </nav>
           </SheetContent>

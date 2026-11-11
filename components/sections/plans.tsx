@@ -1,10 +1,10 @@
 import { ArrowUpRight, Check } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { SectionHeading } from "@/components/section-heading";
-import { siteConfig, whatsappUrl } from "@/data/site";
+import { contactUrl, siteConfig } from "@/data/site";
 import type { CSSProperties } from "react";
 
-const features = ["Avaliação física incluída", "Treino personalizado", "Acesso por reconhecimento facial"];
+const features = ["Acesso à musculação", "Grade de aulas", "Orientação inicial"];
 
 export function Plans() {
   return (
@@ -12,7 +12,7 @@ export function Plans() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid items-end gap-8 lg:grid-cols-[1.35fr_.65fr] lg:gap-20">
           <SectionHeading id="plans-title">Escolha seu compromisso com a <span className="text-primary">sua saúde.</span></SectionHeading>
-          <p className="leading-relaxed text-muted-foreground">Todos os planos dão acesso à musculação. Matrícula: R$ 60, com avaliação física incluída.</p>
+          <p className="leading-relaxed text-muted-foreground">Valores ilustrativos para apresentar a organização comercial do protótipo.</p>
         </div>
         <div className="mt-12 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
           {siteConfig.plans.map((plan, index) => <article key={plan.name} data-reveal style={{ "--reveal-delay": `${100 + index * 100}ms` } as CSSProperties} className={`plan-card relative flex min-h-[430px] flex-col border p-6 ${plan.featured ? "border-primary bg-secondary" : "bg-muted"}`}>
@@ -21,10 +21,10 @@ export function Plans() {
             <div className="mt-7 flex items-start gap-1"><span className="mt-2 text-sm font-bold">R$</span><strong className="font-display text-5xl font-black tracking-[-.035em]">{plan.price}</strong></div>
             <p className="mt-2 text-xs text-muted-foreground">{plan.detail}</p>
             <ul className="mt-8 space-y-3 text-xs text-muted-foreground">{features.map(feature => <li key={feature} className="flex gap-2"><Check className="size-4 shrink-0 text-green-400" />{feature}</li>)}</ul>
-            <a href={whatsappUrl} target="_blank" rel="noreferrer" className={buttonVariants({ variant: "link", className: "mt-auto h-12 justify-between rounded-none border-t px-0 text-foreground no-underline" })}>Quero este plano <ArrowUpRight /></a>
+            <a href={contactUrl} className={buttonVariants({ variant: "link", className: "mt-auto h-12 justify-between rounded-none border-t px-0 text-foreground no-underline" })}>Ver detalhes <ArrowUpRight /></a>
           </article>)}
         </div>
-        <p className="mt-5 text-xs text-muted-foreground">Plano família: R$ 130 por pessoa/mês. Consulte condições com a recepção.</p>
+        <p className="mt-5 text-xs text-muted-foreground">Preços e benefícios fictícios. Nenhuma oferta comercial está sendo realizada.</p>
       </div>
     </section>
   );
