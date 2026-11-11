@@ -9,7 +9,6 @@ import { Navbar } from "@/components/sections/navbar";
 import { Plans } from "@/components/sections/plans";
 import { SocialProof } from "@/components/sections/social-proof";
 import { MotionController } from "@/components/motion/motion-controller";
-import { PrototypeNotice } from "@/components/prototype-notice";
 
 export default function Page() {
   return (
@@ -28,7 +27,6 @@ export default function Page() {
         <FinalCta />
       </main>
       <Footer />
-      <PrototypeNotice />
     </>
   );
 }
