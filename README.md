@@ -1,6 +1,8 @@
 # Forja 12 Academia
 
-Landing page conceitual de uma academia inteiramente fictícia.
+Landing page conceitual de uma academia inteiramente fictícia, criada como peça de portfólio.
+
+**Site:** [forja12-academia.vercel.app](https://forja12-academia.vercel.app)
 
 ## Stack
 
